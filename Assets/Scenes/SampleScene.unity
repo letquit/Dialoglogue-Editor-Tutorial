@@ -171,6 +171,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Female Model
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 21218c67b5d89b742a6f0a2bcfca5d06, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: a69bf6d984e3da44f98af9a057c321c0, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -696,6 +700,7 @@ GameObject:
   - component: {fileID: 777607823}
   - component: {fileID: 777607822}
   - component: {fileID: 777607821}
+  - component: {fileID: 777607824}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -769,6 +774,20 @@ Transform:
   - {fileID: 411125618}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 125, z: 0}
+--- !u!114 &777607824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 777607820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 623e1f5f71245bb4a9378b59a512d6de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 3
+  rotaSpeed: 5
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -870,6 +889,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Male Model
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 67307c143f5b54042a4648ca84b9465a, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: a69bf6d984e3da44f98af9a057c321c0, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
