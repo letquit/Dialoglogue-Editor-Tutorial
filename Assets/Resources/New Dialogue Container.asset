@@ -13,18 +13,24 @@ MonoBehaviour:
   m_Name: New Dialogue Container
   m_EditorClassIdentifier: 
   NodeLinkDatas:
-  - BaseNodeGuid: 3b7f84b3-eaec-4c72-87e0-ce76df897a16
-    TargetNodeGuid: a62573b2-af8f-4eee-8c38-00c5ecf6ed79
-  - BaseNodeGuid: a62573b2-af8f-4eee-8c38-00c5ecf6ed79
-    TargetNodeGuid: 3ded4e1c-045b-4046-b7e5-7cb0d984a803
+  - BaseNodeGuid: b19b7fc5-2724-45e6-ad57-2a4b3fabe525
+    TargetNodeGuid: adeb846b-d08d-4626-9e7b-47a14ae83f9d
+  - BaseNodeGuid: adeb846b-d08d-4626-9e7b-47a14ae83f9d
+    TargetNodeGuid: b1643fb3-288e-4c7e-8c78-f6cd6e92f4c1
+  - BaseNodeGuid: adeb846b-d08d-4626-9e7b-47a14ae83f9d
+    TargetNodeGuid: 21279d4a-b9eb-4774-a1b7-5017e99188f1
+  - BaseNodeGuid: adeb846b-d08d-4626-9e7b-47a14ae83f9d
+    TargetNodeGuid: 0bf92119-457c-4ef6-adee-3669b2a69bcf
+  - BaseNodeGuid: b1643fb3-288e-4c7e-8c78-f6cd6e92f4c1
+    TargetNodeGuid: 868af632-29ce-4a0c-a89b-7875ca02cf19
   DialogueNodeDatas:
-  - NodeGuid: a62573b2-af8f-4eee-8c38-00c5ecf6ed79
-    Position: {x: 271, y: 163}
+  - NodeGuid: adeb846b-d08d-4626-9e7b-47a14ae83f9d
+    Position: {x: 260, y: 155}
     DialogueNodePorts:
     - InputGuid: 
       OutputGuid: 
-      PortId: bb8e0fe3-5355-4d8e-8c24-dc617d03b0f8
-      TextFieldId: 394dfbec-37d8-4691-8a37-e825671972e1
+      PortId: 0e963902-e0e1-45a9-bcc1-bf0db48e0403
+      TextFieldId: 3999e176-ee33-4b5e-b0cb-0b57de0f6afa
       TextLanguages:
       - LanguageType: 0
         LanguageGenericType: e
@@ -34,22 +40,22 @@ MonoBehaviour:
         LanguageGenericType: Choice 1
     - InputGuid: 
       OutputGuid: 
-      PortId: a6293742-62c9-4cf0-baa1-c4ad67762719
-      TextFieldId: 8b37e2c3-83dd-4ece-a3fb-d58a5b7c59f3
+      PortId: bdd59a0e-6a93-48e2-89e8-025dd7ae48ee
+      TextFieldId: 041c41df-5378-4791-835f-3f218ee502db
       TextLanguages:
       - LanguageType: 0
-        LanguageGenericType: e
+        LanguageGenericType: e2
       - LanguageType: 1
         LanguageGenericType: Choice 2
       - LanguageType: 2
         LanguageGenericType: Choice 2
     - InputGuid: 
       OutputGuid: 
-      PortId: f3bc90a7-b719-48c1-acd3-45e0e5d02dcd
-      TextFieldId: 4a29522a-a5a9-4858-82a1-fbd78f0c968b
+      PortId: 372cfac1-2322-419c-896e-d0de3f005a2d
+      TextFieldId: 0928dd45-3057-4303-b25a-ccd69d39d2dc
       TextLanguages:
       - LanguageType: 0
-        LanguageGenericType: Choice 3
+        LanguageGenericType: e4
       - LanguageType: 1
         LanguageGenericType: Choice 3
       - LanguageType: 2
@@ -66,16 +72,53 @@ MonoBehaviour:
     Name: name
     TextType:
     - LanguageType: 0
-      LanguageGenericType: ebd
+      LanguageGenericType: ebg
     - LanguageType: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u4ECE\u4E8C\u5341"
     - LanguageType: 2
-      LanguageGenericType: 
+      LanguageGenericType: "\u306E\u306E\u306E\u306E\u306E"
+  - NodeGuid: b1643fb3-288e-4c7e-8c78-f6cd6e92f4c1
+    Position: {x: 514, y: 78}
+    DialogueNodePorts:
+    - InputGuid: 
+      OutputGuid: 
+      PortId: 35e63332-5507-4363-81b3-5f2783b1df96
+      TextFieldId: 6d45344c-f92f-4a12-a9b6-450aea1d985c
+      TextLanguages:
+      - LanguageType: 0
+        LanguageGenericType: ggg
+      - LanguageType: 1
+        LanguageGenericType: Choice 1
+      - LanguageType: 2
+        LanguageGenericType: Choice 1
+    Sprite: {fileID: 0}
+    DialogueFaceImageType: 0
+    AudioClips:
+    - LanguageType: 0
+      LanguageGenericType: {fileID: 0}
+    - LanguageType: 1
+      LanguageGenericType: {fileID: 0}
+    - LanguageType: 2
+      LanguageGenericType: {fileID: 0}
+    Name: hfdsg
+    TextType:
+    - LanguageType: 0
+      LanguageGenericType: eng
+    - LanguageType: 1
+      LanguageGenericType: "\u82B1\u679C\u5C71"
+    - LanguageType: 2
+      LanguageGenericType: "\u306E\u306E\u306E\u306E\u306E\u306E"
   EndNodeDatas:
-  - NodeGuid: 3ded4e1c-045b-4046-b7e5-7cb0d984a803
-    Position: {x: 522, y: 205}
+  - NodeGuid: 21279d4a-b9eb-4774-a1b7-5017e99188f1
+    Position: {x: 560, y: 342}
     EndNodeType: 1
+  - NodeGuid: 868af632-29ce-4a0c-a89b-7875ca02cf19
+    Position: {x: 743, y: 189}
+    EndNodeType: 0
   StartNodeDatas:
-  - NodeGuid: 3b7f84b3-eaec-4c72-87e0-ce76df897a16
-    Position: {x: 132, y: 176}
-  EventNodeDatas: []
+  - NodeGuid: b19b7fc5-2724-45e6-ad57-2a4b3fabe525
+    Position: {x: 149, y: 143}
+  EventNodeDatas:
+  - NodeGuid: 0bf92119-457c-4ef6-adee-3669b2a69bcf
+    Position: {x: 514, y: 449}
+    DialogueEventSO: {fileID: 0}

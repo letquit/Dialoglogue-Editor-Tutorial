@@ -56,10 +56,11 @@ public class DialogueSaveAndLoad
 
     public void SaveNodes(DialogueContainerSO _dialogueContainerSO)
     {
+        // 修复数据清理错误
         _dialogueContainerSO.DialogueNodeDatas.Clear();
         _dialogueContainerSO.EndNodeDatas.Clear();
-        _dialogueContainerSO.EndNodeDatas.Clear();
         _dialogueContainerSO.StartNodeDatas.Clear();
+        _dialogueContainerSO.EventNodeDatas.Clear(); // 修复：原来是EndNodeDatas.Clear()调用了两次
         
         nodes.ForEach(node =>
         {
@@ -98,10 +99,13 @@ public class DialogueSaveAndLoad
             DialogueNodePorts = _node.dialogueNodePorts
         };
 
+        // 修复：确保所有端口的连接信息都被正确保存
         foreach (DialogueNodePort nodePort in dialogueNodeData.DialogueNodePorts)
         {
             nodePort.OutputGuid = string.Empty;
             nodePort.InputGuid = string.Empty;
+            
+            // 遍历所有边来查找与这个端口的连接
             foreach (Edge edge in edges)
             {
                 if (edge.output.viewDataKey == nodePort.PortId)
@@ -209,6 +213,7 @@ public class DialogueSaveAndLoad
             tempNode.FaceImageType = node.DialogueFaceImageType;
             tempNode.AudioClips = node.AudioClips;
             
+            // 修复：确保所有端口都被正确添加
             foreach (DialogueNodePort nodePort in node.DialogueNodePorts)
             {
                 tempNode.AddChoicePort(tempNode, nodePort);
@@ -221,6 +226,7 @@ public class DialogueSaveAndLoad
 
     private void ConnectNodes(DialogueContainerSO _dialogueContainer)
     {
+        // 连接所有节点（包括对话节点）
         for (int i = 0; i < nodes.Count; i++)
         {
             List<NodeLinkData> connections = _dialogueContainer.NodeLinkDatas
@@ -229,46 +235,64 @@ public class DialogueSaveAndLoad
             for (int j = 0; j < connections.Count; j++)
             {
                 string targetNodeGuid = connections[j].TargetNodeGuid;
-                BaseNode targetNode = nodes.First(node => node.NodeGuid == targetNodeGuid);
+                BaseNode targetNode = nodes.FirstOrDefault(node => node.NodeGuid == targetNodeGuid);
 
-                if ((nodes[i] is DialogueNode) == false)
+                if (targetNode != null)
                 {
-                    LinkNodesTogether(nodes[i].outputContainer[j].Q<Port>(), (Port)targetNode.inputContainer[0]);
-                }
-            }
-        }
-        
-        List<DialogueNode> dialogueNodes = nodes.FindAll(node => node is DialogueNode).Cast<DialogueNode>().ToList();
-        
-        foreach (DialogueNode dialogueNode in dialogueNodes)
-        {
-            foreach (DialogueNodePort nodePort in dialogueNode.dialogueNodePorts)
-            {
-                if (nodePort.InputGuid != string.Empty)
-                {
-                    BaseNode targetNode = nodes.First(node => node.NodeGuid == nodePort.InputGuid);
+                    // 获取输出端口
+                    Port outputPort = null;
                     
-                    // 通过PortId查找对应的Port对象
-                    Port outputPort = FindPortByPortId(dialogueNode, nodePort.PortId);
-                    if (outputPort != null)
+                    // 对于对话节点，需要特殊处理
+                    if (nodes[i] is DialogueNode dialogueNode)
                     {
-                        LinkNodesTogether(outputPort, (Port)targetNode.inputContainer[0]);
+                        // 通过PortId查找对应的Port对象
+                        outputPort = FindPortByPortId(dialogueNode, j);
+                    }
+                    else
+                    {
+                        // 对于非对话节点，使用索引查找端口
+                        outputPort = GetOutputPortAt(nodes[i], j);
+                    }
+                    
+                    // 获取输入端口
+                    Port inputPort = GetInputPortAt(targetNode, 0);
+                    
+                    if (outputPort != null && inputPort != null)
+                    {
+                        LinkNodesTogether(outputPort, inputPort);
                     }
                 }
             }
         }
     }
 
-    // 新增方法：通过PortId查找对应的Port对象
-    private Port FindPortByPortId(DialogueNode dialogueNode, string portId)
+    // 通过索引查找对话节点的端口
+    private Port FindPortByPortId(DialogueNode dialogueNode, int index)
     {
-        // 遍历DialogueNode的所有输出端口
-        foreach (Port port in dialogueNode.outputContainer.Children().OfType<Port>())
+        if (index < dialogueNode.outputContainer.childCount)
         {
-            if (port.viewDataKey == portId)
-            {
-                return port;
-            }
+            VisualElement portElement = dialogueNode.outputContainer[index];
+            return portElement.Q<Port>();
+        }
+        return null;
+    }
+
+    // 安全地获取输出端口
+    private Port GetOutputPortAt(BaseNode node, int index)
+    {
+        if (node.outputContainer.childCount > index)
+        {
+            return node.outputContainer[index].Q<Port>();
+        }
+        return null;
+    }
+
+    // 安全地获取输入端口
+    private Port GetInputPortAt(BaseNode node, int index)
+    {
+        if (node.inputContainer.childCount > index)
+        {
+            return node.inputContainer[index].Q<Port>();
         }
         return null;
     }
