@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -24,5 +26,14 @@ public class DialogueGraphView : GraphView
         GridBackground grid = new GridBackground();
         Insert(0, grid);
         grid.StretchToParentSize();
+    }
+
+    public void LanguageReload()
+    {
+        List<DialogueNode> dialogueNodes = nodes.ToList().Where(node => node is DialogueNode).Cast<DialogueNode>().ToList();
+        foreach (DialogueNode dialogueNode in dialogueNodes)
+        {
+            dialogueNode.ReloadLanguage();
+        }
     }
 }

@@ -109,9 +109,11 @@ public class DialogueEditorWindow : EditorWindow
         Debug.Log("Save");
     }
 
-    private void Language(LanguageType language, ToolbarMenu toolbarMenu)
+    private void Language(LanguageType _language, ToolbarMenu _toolbarMenu)
     {
         // TODO: language
-        toolbarMenu.text = $"Language: {language}";
+        toolbarMenu.text = $"Language: {_language}";
+        languageType = _language;
+        graphView.LanguageReload();
     }
 }
