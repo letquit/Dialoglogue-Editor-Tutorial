@@ -10,14 +10,16 @@ public class DialogueNode : BaseNode
 {
     private List<LanguageGeneric<string>> texts = new List<LanguageGeneric<string>>();
     private List<LanguageGeneric<AudioClip>> audioClips = new List<LanguageGeneric<AudioClip>>();
-    private string name = "";
+    private new string name = "";
     private Sprite faceImage;
     private DialogueFaceImageType faceImageType;
     
-    private List<DialogueNodePort> dialogueNodePorts = new List<DialogueNodePort>();
     
     // 存储TextField引用的字典，键为TextFieldId
     private Dictionary<string, TextField> portTextFields = new Dictionary<string, TextField>();
+
+
+    public List<DialogueNodePort> dialogueNodePorts = new List<DialogueNodePort>();
     
     public List<LanguageGeneric<string>> Texts
     {

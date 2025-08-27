@@ -12,3 +12,70 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f15829657e4d8b447b7a55c02123f98f, type: 3}
   m_Name: New Dialogue Container
   m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: 3b7f84b3-eaec-4c72-87e0-ce76df897a16
+    TargetNodeGuid: a62573b2-af8f-4eee-8c38-00c5ecf6ed79
+  - BaseNodeGuid: a62573b2-af8f-4eee-8c38-00c5ecf6ed79
+    TargetNodeGuid: 3ded4e1c-045b-4046-b7e5-7cb0d984a803
+  DialogueNodeDatas:
+  - NodeGuid: a62573b2-af8f-4eee-8c38-00c5ecf6ed79
+    Position: {x: 271, y: 163}
+    DialogueNodePorts:
+    - InputGuid: 
+      OutputGuid: 
+      PortId: bb8e0fe3-5355-4d8e-8c24-dc617d03b0f8
+      TextFieldId: 394dfbec-37d8-4691-8a37-e825671972e1
+      TextLanguages:
+      - LanguageType: 0
+        LanguageGenericType: e
+      - LanguageType: 1
+        LanguageGenericType: Choice 1
+      - LanguageType: 2
+        LanguageGenericType: Choice 1
+    - InputGuid: 
+      OutputGuid: 
+      PortId: a6293742-62c9-4cf0-baa1-c4ad67762719
+      TextFieldId: 8b37e2c3-83dd-4ece-a3fb-d58a5b7c59f3
+      TextLanguages:
+      - LanguageType: 0
+        LanguageGenericType: e
+      - LanguageType: 1
+        LanguageGenericType: Choice 2
+      - LanguageType: 2
+        LanguageGenericType: Choice 2
+    - InputGuid: 
+      OutputGuid: 
+      PortId: f3bc90a7-b719-48c1-acd3-45e0e5d02dcd
+      TextFieldId: 4a29522a-a5a9-4858-82a1-fbd78f0c968b
+      TextLanguages:
+      - LanguageType: 0
+        LanguageGenericType: Choice 3
+      - LanguageType: 1
+        LanguageGenericType: Choice 3
+      - LanguageType: 2
+        LanguageGenericType: Choice 3
+    Sprite: {fileID: 21300000, guid: b41ca9d947370b944a8cb4fa861377e5, type: 3}
+    DialogueFaceImageType: 0
+    AudioClips:
+    - LanguageType: 0
+      LanguageGenericType: {fileID: 0}
+    - LanguageType: 1
+      LanguageGenericType: {fileID: 0}
+    - LanguageType: 2
+      LanguageGenericType: {fileID: 0}
+    Name: name
+    TextType:
+    - LanguageType: 0
+      LanguageGenericType: ebd
+    - LanguageType: 1
+      LanguageGenericType: 
+    - LanguageType: 2
+      LanguageGenericType: 
+  EndNodeDatas:
+  - NodeGuid: 3ded4e1c-045b-4046-b7e5-7cb0d984a803
+    Position: {x: 522, y: 205}
+    EndNodeType: 1
+  StartNodeDatas:
+  - NodeGuid: 3b7f84b3-eaec-4c72-87e0-ce76df897a16
+    Position: {x: 132, y: 176}
+  EventNodeDatas: []

@@ -9,7 +9,7 @@ public class BaseNode : Node
     protected Vector2 defaultNodeSide = new Vector2(200, 250);
     
     protected string nodeGuid;
-    protected string NodeGuid { get => nodeGuid; set => nodeGuid = value; }
+    public string NodeGuid { get => nodeGuid; set => nodeGuid = value; }
 
     public BaseNode()
     {
