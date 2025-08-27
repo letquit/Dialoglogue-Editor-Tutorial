@@ -126,7 +126,7 @@ public class DialogueNode : BaseNode
         label_name.AddToClassList("Label");
         mainContainer.Add(label_name);
         
-        name_Field = new TextField("Name");
+        name_Field = new TextField("");
         name_Field.RegisterValueChangedCallback(value =>
         {
             name = value.newValue;
