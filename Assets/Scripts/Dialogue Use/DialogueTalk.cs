@@ -82,7 +82,7 @@ public class DialogueTalk : DialogueGetData
         }
         
         // 设置对话文本
-        var textEntry = _nodeData.TextType.Find(text => text.LanguageType == LanguageController.Instane.Language);
+        var textEntry = _nodeData.TextLanguages.Find(text => text.LanguageType == LanguageController.Instane.Language);
         string displayText = textEntry != null ? textEntry.LanguageGenericType : "No text found";
         dialogueController.SetText(_nodeData.Name, displayText);
         
@@ -153,18 +153,18 @@ public class DialogueTalk : DialogueGetData
             texts.Add(buttonText);
             
             // 创建按钮动作
-            string inputGuid = nodePort.InputGuid; // 创建局部副本避免闭包问题
+            string outputGuid = nodePort.OutputGuid; // 修改这里：使用OutputGuid而不是InputGuid
             UnityAction tempAction = () =>
             {
                 audioSource.Stop();
-                BaseNodeData targetNode = GetNodeByGuid(inputGuid);
+                BaseNodeData targetNode = GetNodeByGuid(outputGuid); // 修改这里：使用outputGuid
                 if (targetNode != null)
                 {
                     CheckNodeType(targetNode);
                 }
                 else
                 {
-                    Debug.LogError($"DialogueTalk: Target node with GUID {inputGuid} not found");
+                    Debug.LogError($"DialogueTalk: Target node with GUID {outputGuid} not found");
                 }
             };
             unityActions.Add(tempAction);
@@ -172,4 +172,5 @@ public class DialogueTalk : DialogueGetData
         
         dialogueController.SetButtons(texts, unityActions);
     }
+
 }

@@ -219,7 +219,7 @@ public class DialogueNode : BaseNode
                 {
                     if (edge.input.node is BaseNode inputNode)
                     {
-                        nodePort.InputGuid = inputNode.NodeGuid;
+                        nodePort.OutputGuid = inputNode.NodeGuid; // 修改这里：设置OutputGuid而不是InputGuid
                     }
                     break;
                 }
@@ -235,6 +235,7 @@ public class DialogueNode : BaseNode
         string outputPortName = "Continue";
 
         DialogueNodePort dialogueNodePort = new DialogueNodePort();
+        dialogueNodePort.PortGuid = Guid.NewGuid().ToString();
         
         // 确保在任何条件下都设置PortId
         if (_dialogueNodePort != null)
@@ -268,6 +269,7 @@ public class DialogueNode : BaseNode
         {
             dialogueNodePort.InputGuid = _dialogueNodePort.InputGuid;
             dialogueNodePort.OutputGuid = _dialogueNodePort.OutputGuid;
+            dialogueNodePort.PortGuid = _dialogueNodePort.PortGuid;
 
             foreach (LanguageGeneric<string> languageGeneric in _dialogueNodePort.TextLanguages)
             {
@@ -346,5 +348,4 @@ public class DialogueNode : BaseNode
         _node.RefreshPorts();
         _node.RefreshExpandedState();
     }
-
 }

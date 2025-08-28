@@ -1,0 +1,426 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f15829657e4d8b447b7a55c02123f98f, type: 3}
+  m_Name: New Dialogue Container
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: b90cbefa-ee1a-4d3d-befd-99c4284c6251
+    TargetNodeGuid: 4f2183f5-4cde-4762-abc2-02b6f1a3c908
+  - BaseNodeGuid: cce8e68a-9dfc-4b79-bbaa-c9dc94afbc57
+    TargetNodeGuid: d0efc14d-3b5e-46ca-954b-7e7607611bf1
+  - BaseNodeGuid: 798102fd-4bb6-444d-8de8-3e1c8eb7abfc
+    TargetNodeGuid: 646938be-391a-4526-8cab-fe1243c20f5c
+  - BaseNodeGuid: ecae499e-312c-4999-967f-1ec06d4218f2
+    TargetNodeGuid: 3e8560d0-a356-48f8-8905-460a0f639fb4
+  - BaseNodeGuid: 3e8560d0-a356-48f8-8905-460a0f639fb4
+    TargetNodeGuid: ad7c2249-f94e-4b82-bb14-d162221e6f84
+  - BaseNodeGuid: ad7c2249-f94e-4b82-bb14-d162221e6f84
+    TargetNodeGuid: 29db7eae-38fb-47a0-986d-5ef7d0070ba6
+  - BaseNodeGuid: ad7c2249-f94e-4b82-bb14-d162221e6f84
+    TargetNodeGuid: 8f086cf9-3834-438f-b6f8-466b0fc56ec3
+  - BaseNodeGuid: 29db7eae-38fb-47a0-986d-5ef7d0070ba6
+    TargetNodeGuid: ea8b4c41-f99d-439c-aaca-ae208044adaf
+  - BaseNodeGuid: ea8b4c41-f99d-439c-aaca-ae208044adaf
+    TargetNodeGuid: cf1599b0-628b-4179-a90a-df9345750970
+  - BaseNodeGuid: fa850dc7-a2aa-4a59-bcb4-ad5296faa57e
+    TargetNodeGuid: cf1599b0-628b-4179-a90a-df9345750970
+  - BaseNodeGuid: 8f086cf9-3834-438f-b6f8-466b0fc56ec3
+    TargetNodeGuid: fa850dc7-a2aa-4a59-bcb4-ad5296faa57e
+  - BaseNodeGuid: 4f2183f5-4cde-4762-abc2-02b6f1a3c908
+    TargetNodeGuid: ecae499e-312c-4999-967f-1ec06d4218f2
+  - BaseNodeGuid: 4f2183f5-4cde-4762-abc2-02b6f1a3c908
+    TargetNodeGuid: c7174e3e-bfa8-4dc1-83c8-deb69cff5d49
+  - BaseNodeGuid: 4f2183f5-4cde-4762-abc2-02b6f1a3c908
+    TargetNodeGuid: 5d0239b3-9f6f-4679-894c-504ae54e26cf
+  - BaseNodeGuid: c7174e3e-bfa8-4dc1-83c8-deb69cff5d49
+    TargetNodeGuid: 798102fd-4bb6-444d-8de8-3e1c8eb7abfc
+  - BaseNodeGuid: c7174e3e-bfa8-4dc1-83c8-deb69cff5d49
+    TargetNodeGuid: cce8e68a-9dfc-4b79-bbaa-c9dc94afbc57
+  - BaseNodeGuid: c7174e3e-bfa8-4dc1-83c8-deb69cff5d49
+    TargetNodeGuid: efdc0c43-19d0-4e4d-8f8e-6a362789f225
+  DialogueNodeDatas:
+  - NodeGuid: ecae499e-312c-4999-967f-1ec06d4218f2
+    Position: {x: 854, y: 141}
+    DialogueNodePorts:
+    - PortGuid: fd0c003e-3b4c-414e-9156-f6e3ee055089
+      InputGuid: 
+      OutputGuid: 3e8560d0-a356-48f8-8905-460a0f639fb4
+      PortId: 440aadff-e278-4a9e-8cb2-1dbb075395e6
+      TextFieldId: 07c492a3-979d-4383-9f48-29593c0254e7
+      TextLanguages:
+      - LanguageType: 0
+        LanguageGenericType: Continue
+      - LanguageType: 1
+        LanguageGenericType: "\u7EE7\u7EED"
+      - LanguageType: 2
+        LanguageGenericType: "\u7D9A\u3051\u308B"
+    Sprite: {fileID: 21300000, guid: b41ca9d947370b944a8cb4fa861377e5, type: 3}
+    DialogueFaceImageType: 1
+    AudioClips:
+    - LanguageType: 0
+      LanguageGenericType: {fileID: 0}
+    - LanguageType: 1
+      LanguageGenericType: {fileID: 0}
+    - LanguageType: 2
+      LanguageGenericType: {fileID: 0}
+    Name: Female
+    TextLanguages:
+    - LanguageType: 0
+      LanguageGenericType: 'I am a random Npc.
+
+        You?'
+    - LanguageType: 1
+      LanguageGenericType: "\u6211\u662F\u4E00\u4E2A\u968F\u673A\u7684\u8DEF\u4EBANPC\u3002\n\u4F60\u5462\uFF1F"
+    - LanguageType: 2
+      LanguageGenericType: "\u79C1\u306F\u305F\u3060\u306E\u30E9\u30F3\u30C0\u30E0NPC\u3060\u3088\u3002\n\u3042\u306A\u305F\u306F\uFF1F"
+  - NodeGuid: 3e8560d0-a356-48f8-8905-460a0f639fb4
+    Position: {x: 1117, y: 141}
+    DialogueNodePorts:
+    - PortGuid: a410c26c-1276-4a85-811f-60f54d8d9da8
+      InputGuid: 
+      OutputGuid: ad7c2249-f94e-4b82-bb14-d162221e6f84
+      PortId: 57687f20-4ae4-4e77-bf31-281b22baf856
+      TextFieldId: a84e5f07-cd82-4cc3-84b3-a6ce802daa2d
+      TextLanguages:
+      - LanguageType: 0
+        LanguageGenericType: Continue
+      - LanguageType: 1
+        LanguageGenericType: "\u7EE7\u7EED"
+      - LanguageType: 2
+        LanguageGenericType: "\u7D9A\u3051\u308B"
+    Sprite: {fileID: 21300000, guid: 2449ecd69df10204688e6c15d6f03a25, type: 3}
+    DialogueFaceImageType: 0
+    AudioClips:
+    - LanguageType: 0
+      LanguageGenericType: {fileID: 0}
+    - LanguageType: 1
+      LanguageGenericType: {fileID: 0}
+    - LanguageType: 2
+      LanguageGenericType: {fileID: 0}
+    Name: Male
+    TextLanguages:
+    - LanguageType: 0
+      LanguageGenericType: I am supposed to be the player!
+    - LanguageType: 1
+      LanguageGenericType: "\u6211\u624D\u662F\u73A9\u5BB6\uFF01"
+    - LanguageType: 2
+      LanguageGenericType: "\u79C1\u306F\u30D7\u30EC\u30A4\u30E4\u30FC\u306E\u306F\u305A\u306A\u3093\u3060\u3051\u3069\uFF01"
+  - NodeGuid: ad7c2249-f94e-4b82-bb14-d162221e6f84
+    Position: {x: 1371, y: 141}
+    DialogueNodePorts:
+    - PortGuid: a9c660f4-2cb6-41fb-a16a-689a7695820f
+      InputGuid: 
+      OutputGuid: 29db7eae-38fb-47a0-986d-5ef7d0070ba6
+      PortId: f53ba102-2c08-4843-9a74-cba354a1b230
+      TextFieldId: f76be7af-dd5f-4a77-b9ef-d660a8b80752
+      TextLanguages:
+      - LanguageType: 0
+        LanguageGenericType: Yes!
+      - LanguageType: 1
+        LanguageGenericType: "\u6709\uFF01"
+      - LanguageType: 2
+        LanguageGenericType: "\u3082\u3061\u308D\u3093\uFF01"
+    - PortGuid: a4db2f92-36dc-4ff1-bbab-c7b12d9580a7
+      InputGuid: 
+      OutputGuid: 8f086cf9-3834-438f-b6f8-466b0fc56ec3
+      PortId: d9777296-2d22-468a-9f6d-e9c06d17f32e
+      TextFieldId: d5598daa-0052-4950-a268-1ca63e0f061e
+      TextLanguages:
+      - LanguageType: 0
+        LanguageGenericType: No...
+      - LanguageType: 1
+        LanguageGenericType: "\u6CA1\u610F\u601D..."
+      - LanguageType: 2
+        LanguageGenericType: "\u5168\u7136\u697D\u3057\u304F\u306A\u3044\u3088..."
+    Sprite: {fileID: 21300000, guid: b41ca9d947370b944a8cb4fa861377e5, type: 3}
+    DialogueFaceImageType: 1
+    AudioClips:
+    - LanguageType: 0
+      LanguageGenericType: {fileID: 0}
+    - LanguageType: 1
+      LanguageGenericType: {fileID: 0}
+    - LanguageType: 2
+      LanguageGenericType: {fileID: 0}
+    Name: Female
+    TextLanguages:
+    - LanguageType: 0
+      LanguageGenericType: Is it any fun to be the player?
+    - LanguageType: 1
+      LanguageGenericType: "\u5F53\u73A9\u5BB6\u6709\u610F\u601D\u5417\uFF1F"
+    - LanguageType: 2
+      LanguageGenericType: "\u30D7\u30EC\u30A4\u30E4\u30FC\u3063\u3066\u697D\u3057\u3044\u306E\uFF1F"
+  - NodeGuid: 29db7eae-38fb-47a0-986d-5ef7d0070ba6
+    Position: {x: 1675, y: -13}
+    DialogueNodePorts:
+    - PortGuid: 52a19b29-8980-4f21-aa87-695cbfcefb6e
+      InputGuid: 
+      OutputGuid: ea8b4c41-f99d-439c-aaca-ae208044adaf
+      PortId: d4fe9e9b-8eb4-4b97-9c16-5fa47bdce2ac
+      TextFieldId: 43711aee-cfb9-4f9b-ad6b-3784f9c91c3f
+      TextLanguages:
+      - LanguageType: 0
+        LanguageGenericType: Continue
+      - LanguageType: 1
+        LanguageGenericType: "\u7EE7\u7EED"
+      - LanguageType: 2
+        LanguageGenericType: "\u7D9A\u3051\u308B"
+    Sprite: {fileID: 21300000, guid: 2449ecd69df10204688e6c15d6f03a25, type: 3}
+    DialogueFaceImageType: 0
+    AudioClips:
+    - LanguageType: 0
+      LanguageGenericType: {fileID: 0}
+    - LanguageType: 1
+      LanguageGenericType: {fileID: 0}
+    - LanguageType: 2
+      LanguageGenericType: {fileID: 0}
+    Name: Male
+    TextLanguages:
+    - LanguageType: 0
+      LanguageGenericType: Yes it is really fun!
+    - LanguageType: 1
+      LanguageGenericType: "\u5F53\u7136\u6709\u610F\u601D\uFF0C\u8D85\u597D\u73A9\u7684\uFF01"
+    - LanguageType: 2
+      LanguageGenericType: "\u3046\u3093\u3001\u672C\u5F53\u306B\u697D\u3057\u3044\u3088\uFF01"
+  - NodeGuid: ea8b4c41-f99d-439c-aaca-ae208044adaf
+    Position: {x: 1945, y: -13}
+    DialogueNodePorts:
+    - PortGuid: acebfd81-8c6c-4320-8633-8259e2c78e79
+      InputGuid: 
+      OutputGuid: cf1599b0-628b-4179-a90a-df9345750970
+      PortId: fff5792b-a16d-4ce5-9130-fc09d6b805d5
+      TextFieldId: 08d82e02-a9f1-46e7-b9d8-17f9285c74e3
+      TextLanguages:
+      - LanguageType: 0
+        LanguageGenericType: End
+      - LanguageType: 1
+        LanguageGenericType: "\u7ED3\u675F"
+      - LanguageType: 2
+        LanguageGenericType: "\u7D42\u4E86"
+    Sprite: {fileID: 21300000, guid: b41ca9d947370b944a8cb4fa861377e5, type: 3}
+    DialogueFaceImageType: 1
+    AudioClips:
+    - LanguageType: 0
+      LanguageGenericType: {fileID: 0}
+    - LanguageType: 1
+      LanguageGenericType: {fileID: 0}
+    - LanguageType: 2
+      LanguageGenericType: {fileID: 0}
+    Name: Female
+    TextLanguages:
+    - LanguageType: 0
+      LanguageGenericType: wow i hope one day I an become the player.
+    - LanguageType: 1
+      LanguageGenericType: "\u54C7\uFF0C\u771F\u5E0C\u671B\u6709\u4E00\u5929\u6211\u4E5F\u80FD\u5F53\u4E0A\u73A9\u5BB6\u3002"
+    - LanguageType: 2
+      LanguageGenericType: "\u308F\u3042\u3001\u3044\u3064\u304B\u79C1\u3082\u30D7\u30EC\u30A4\u30E4\u30FC\u306B\u306A\u308C\u308B\u3068\u3044\u3044\u306A\u3002"
+  - NodeGuid: fa850dc7-a2aa-4a59-bcb4-ad5296faa57e
+    Position: {x: 1945, y: 313}
+    DialogueNodePorts:
+    - PortGuid: 5f9d544c-57fa-486f-979a-9e68e167081c
+      InputGuid: 
+      OutputGuid: cf1599b0-628b-4179-a90a-df9345750970
+      PortId: aa2a7335-25f5-4326-a264-4778bcc8167f
+      TextFieldId: 908f8262-262b-4b35-9f30-6f869b78689a
+      TextLanguages:
+      - LanguageType: 0
+        LanguageGenericType: End
+      - LanguageType: 1
+        LanguageGenericType: "\u7ED3\u675F"
+      - LanguageType: 2
+        LanguageGenericType: "\u7D42\u4E86"
+    Sprite: {fileID: 21300000, guid: b41ca9d947370b944a8cb4fa861377e5, type: 3}
+    DialogueFaceImageType: 1
+    AudioClips:
+    - LanguageType: 0
+      LanguageGenericType: {fileID: 0}
+    - LanguageType: 1
+      LanguageGenericType: {fileID: 0}
+    - LanguageType: 2
+      LanguageGenericType: {fileID: 0}
+    Name: Female
+    TextLanguages:
+    - LanguageType: 0
+      LanguageGenericType: Sucks to be you...
+    - LanguageType: 1
+      LanguageGenericType: "\u5475\u5475\uFF0C\u53EF\u601C\u4F60\u4E86......"
+    - LanguageType: 2
+      LanguageGenericType: "\u3042\u306A\u305F\u3063\u3066\u53EF\u54C0\u60F3\u306D..."
+  - NodeGuid: 8f086cf9-3834-438f-b6f8-466b0fc56ec3
+    Position: {x: 1675, y: 313}
+    DialogueNodePorts:
+    - PortGuid: 7675aafc-2f73-43a7-aba7-48ccdd22c7da
+      InputGuid: 
+      OutputGuid: fa850dc7-a2aa-4a59-bcb4-ad5296faa57e
+      PortId: 10246b32-01ec-4e64-88d0-fa398bdd9af1
+      TextFieldId: 4cf75528-8412-43b0-8be3-cb567ad0f6da
+      TextLanguages:
+      - LanguageType: 0
+        LanguageGenericType: Continue
+      - LanguageType: 1
+        LanguageGenericType: "\u7EE7\u7EED"
+      - LanguageType: 2
+        LanguageGenericType: "\u7D9A\u3051\u308B"
+    Sprite: {fileID: 21300000, guid: 2449ecd69df10204688e6c15d6f03a25, type: 3}
+    DialogueFaceImageType: 0
+    AudioClips:
+    - LanguageType: 0
+      LanguageGenericType: {fileID: 0}
+    - LanguageType: 1
+      LanguageGenericType: {fileID: 0}
+    - LanguageType: 2
+      LanguageGenericType: {fileID: 0}
+    Name: Male
+    TextLanguages:
+    - LanguageType: 0
+      LanguageGenericType: No not really...
+    - LanguageType: 1
+      LanguageGenericType: "\u5443......\u5176\u5B9E\u4E5F\u6CA1\u90A3\u4E48\u60E8\u5566\u2026\u2026"
+    - LanguageType: 2
+      LanguageGenericType: "\u3044\u3084\u3001\u5225\u306B\u305D\u3093\u306A\u3053\u3068\u306A\u3044\u3088\u2026"
+  - NodeGuid: 4f2183f5-4cde-4762-abc2-02b6f1a3c908
+    Position: {x: 512, y: 437}
+    DialogueNodePorts:
+    - PortGuid: 6d65c924-2c5b-479c-8d75-4c8d7424e9a9
+      InputGuid: 
+      OutputGuid: ecae499e-312c-4999-967f-1ec06d4218f2
+      PortId: d176b85f-aea4-4b20-9926-2e5b01d28241
+      TextFieldId: 7660327d-edcf-4402-bd6c-29ff8aaa1db7
+      TextLanguages:
+      - LanguageType: 0
+        LanguageGenericType: Who are you?
+      - LanguageType: 1
+        LanguageGenericType: "\u4F60\u662F\u8C01\u554A\uFF1F"
+      - LanguageType: 2
+        LanguageGenericType: "\u8AB0\u306A\u306E\u3001\u3042\u306A\u305F\u306F\uFF1F"
+    - PortGuid: 8374fde7-bdcf-47b7-8927-157cd4fd9cf7
+      InputGuid: 
+      OutputGuid: c7174e3e-bfa8-4dc1-83c8-deb69cff5d49
+      PortId: 90445389-a62c-4ff3-9223-f2477bb71696
+      TextFieldId: d91d4b4b-14a8-4315-ab8b-a6fff4a75bc3
+      TextLanguages:
+      - LanguageType: 0
+        LanguageGenericType: I want to color stuff
+      - LanguageType: 1
+        LanguageGenericType: "\u6211\u60F3\u7ED9\u4E1C\u897F\u6D82\u8272"
+      - LanguageType: 2
+        LanguageGenericType: "\u8272\u3092\u5857\u308A\u305F\u3044\u306E\uFF01"
+    - PortGuid: aad60dea-3853-4879-aaae-47fd251789c4
+      InputGuid: 
+      OutputGuid: 5d0239b3-9f6f-4679-894c-504ae54e26cf
+      PortId: e50c1298-a0ea-4747-a7fc-9167761b898f
+      TextFieldId: 2399a364-0966-4387-8be0-65ec2754c6de
+      TextLanguages:
+      - LanguageType: 0
+        LanguageGenericType: Bye
+      - LanguageType: 1
+        LanguageGenericType: "\u62DC\u62DC"
+      - LanguageType: 2
+        LanguageGenericType: "\u3058\u3083\u3042\u306D"
+    Sprite: {fileID: 21300000, guid: b41ca9d947370b944a8cb4fa861377e5, type: 3}
+    DialogueFaceImageType: 1
+    AudioClips:
+    - LanguageType: 0
+      LanguageGenericType: {fileID: 0}
+    - LanguageType: 1
+      LanguageGenericType: {fileID: 0}
+    - LanguageType: 2
+      LanguageGenericType: {fileID: 0}
+    Name: Female
+    TextLanguages:
+    - LanguageType: 0
+      LanguageGenericType: Yes?
+    - LanguageType: 1
+      LanguageGenericType: "\u55EF\uFF1F\u600E\u4E48\u4E86\uFF1F"
+    - LanguageType: 2
+      LanguageGenericType: "\u3093\uFF1F\u3069\u3046\u3057\u305F\u306E\uFF1F"
+  - NodeGuid: c7174e3e-bfa8-4dc1-83c8-deb69cff5d49
+    Position: {x: 889, y: 459}
+    DialogueNodePorts:
+    - PortGuid: 29700375-a667-4c2a-8639-f4256a84cc79
+      InputGuid: 
+      OutputGuid: 798102fd-4bb6-444d-8de8-3e1c8eb7abfc
+      PortId: fd11bb69-5214-41ab-abed-88035f267962
+      TextFieldId: 85e358fc-3970-4696-bc23-e4e85d1ac5d7
+      TextLanguages:
+      - LanguageType: 0
+        LanguageGenericType: Color Player
+      - LanguageType: 1
+        LanguageGenericType: "\u7ED9\u73A9\u5BB6\u6D82\u8272"
+      - LanguageType: 2
+        LanguageGenericType: "\u30D7\u30EC\u30A4\u30E4\u30FC\u306B\u8272\u3092\u5857\u308B"
+    - PortGuid: f81542df-fb68-4751-856e-8bd97d4f7593
+      InputGuid: 
+      OutputGuid: cce8e68a-9dfc-4b79-bbaa-c9dc94afbc57
+      PortId: ea43c7bb-bf35-46df-9dd1-a3257ff7e880
+      TextFieldId: ac87c69a-b44f-4501-94a1-be78d377863b
+      TextLanguages:
+      - LanguageType: 0
+        LanguageGenericType: Color NPC
+      - LanguageType: 1
+        LanguageGenericType: "\u7ED9NPC\u6D82\u8272"
+      - LanguageType: 2
+        LanguageGenericType: "NPC\u306B\u8272\u3092\u5857\u308B"
+    - PortGuid: e607fac8-5a24-4f36-8fb0-c1d7c1096e7b
+      InputGuid: 
+      OutputGuid: efdc0c43-19d0-4e4d-8f8e-6a362789f225
+      PortId: 413b191d-57af-493b-bb21-2ac98b21823f
+      TextFieldId: f98dd6d2-720e-434a-ab90-7b251f5719a4
+      TextLanguages:
+      - LanguageType: 0
+        LanguageGenericType: Go back
+      - LanguageType: 1
+        LanguageGenericType: "\u8FD4\u56DE"
+      - LanguageType: 2
+        LanguageGenericType: "\u623B\u308B"
+    Sprite: {fileID: 21300000, guid: b41ca9d947370b944a8cb4fa861377e5, type: 3}
+    DialogueFaceImageType: 1
+    AudioClips:
+    - LanguageType: 0
+      LanguageGenericType: {fileID: 0}
+    - LanguageType: 1
+      LanguageGenericType: {fileID: 0}
+    - LanguageType: 2
+      LanguageGenericType: {fileID: 0}
+    Name: Female
+    TextLanguages:
+    - LanguageType: 0
+      LanguageGenericType: What do you want to color?
+    - LanguageType: 1
+      LanguageGenericType: "\u4F60\u60F3\u6D82\u4EC0\u4E48\u989C\u8272\u554A\uFF1F"
+    - LanguageType: 2
+      LanguageGenericType: "\u4F55\u306B\u8272\u3092\u5857\u308A\u305F\u3044\u306E?"
+  EndNodeDatas:
+  - NodeGuid: 646938be-391a-4526-8cab-fe1243c20f5c
+    Position: {x: 1493, y: 459}
+    EndNodeType: 1
+  - NodeGuid: d0efc14d-3b5e-46ca-954b-7e7607611bf1
+    Position: {x: 1496, y: 610}
+    EndNodeType: 1
+  - NodeGuid: efdc0c43-19d0-4e4d-8f8e-6a362789f225
+    Position: {x: 1243, y: 755}
+    EndNodeType: 2
+  - NodeGuid: cf1599b0-628b-4179-a90a-df9345750970
+    Position: {x: 2256, y: 209}
+    EndNodeType: 3
+  - NodeGuid: 5d0239b3-9f6f-4679-894c-504ae54e26cf
+    Position: {x: 912, y: 755}
+    EndNodeType: 0
+  StartNodeDatas:
+  - NodeGuid: b90cbefa-ee1a-4d3d-befd-99c4284c6251
+    Position: {x: 353, y: 459}
+  EventNodeDatas:
+  - NodeGuid: cce8e68a-9dfc-4b79-bbaa-c9dc94afbc57
+    Position: {x: 1222, y: 610}
+    DialogueEventSO: {fileID: 11400000, guid: 8c164630cdf6cd941ac6db4a909755af, type: 2}
+  - NodeGuid: 798102fd-4bb6-444d-8de8-3e1c8eb7abfc
+    Position: {x: 1222, y: 474}
+    DialogueEventSO: {fileID: 11400000, guid: b85dd472ecd41db49864e305f6179574, type: 2}

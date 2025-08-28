@@ -1,3 +1,4 @@
+// DialogueController.cs
 using System;
 using System.Collections.Generic;
 using TMPro;
@@ -56,6 +57,9 @@ public class DialogueController : MonoBehaviour
     {
         textName.text = _name;
         textBox.text = _textBox;
+        
+        // 切换字体
+        UpdateFont();
     }
 
     public void SetImage(Sprite _image, DialogueFaceImageType _dialogueFaceImageType)
@@ -101,6 +105,37 @@ public class DialogueController : MonoBehaviour
             // 清除之前的监听器并添加新的监听器
             buttons[i].onClick.RemoveAllListeners();
             buttons[i].onClick.AddListener(_unityActions[i]);
+        }
+        
+        // 切换按钮字体
+        UpdateButtonFonts();
+    }
+    
+    private void UpdateFont()
+    {
+        if (LanguageController.Instane != null)
+        {
+            TMP_FontAsset font = LanguageController.Instane.GetFontForLanguage(LanguageController.Instane.Language);
+            if (font != null)
+            {
+                textName.font = font;
+                textBox.font = font;
+            }
+        }
+    }
+    
+    private void UpdateButtonFonts()
+    {
+        if (LanguageController.Instane != null)
+        {
+            TMP_FontAsset font = LanguageController.Instane.GetFontForLanguage(LanguageController.Instane.Language);
+            if (font != null)
+            {
+                foreach (var buttonText in buttonTexts)
+                {
+                    buttonText.font = font;
+                }
+            }
         }
     }
 }

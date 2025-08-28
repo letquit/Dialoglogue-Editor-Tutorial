@@ -52,7 +52,7 @@ public class DialogueNodeData : BaseNodeData
     public DialogueFaceImageType DialogueFaceImageType;
     public List<LanguageGeneric<AudioClip>> AudioClips;
     public string Name;
-    public List<LanguageGeneric<string>> TextType;
+    [FormerlySerializedAs("TextType")] public List<LanguageGeneric<string>> TextLanguages;
 }
 
 [Serializable]
@@ -83,6 +83,7 @@ public class LanguageGeneric<T>
 [Serializable]
 public class DialogueNodePort
 {
+    public string PortGuid;
     public string InputGuid;
     public string OutputGuid;
     public string PortId;

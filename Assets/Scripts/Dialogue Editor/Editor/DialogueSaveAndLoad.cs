@@ -91,7 +91,7 @@ public class DialogueSaveAndLoad
         {
             NodeGuid = _node.NodeGuid,
             Position = _node.GetPosition().position,
-            TextType = _node.Texts,
+            TextLanguages = _node.Texts,
             Name = _node.Name,
             AudioClips = _node.AudioClips,
             DialogueFaceImageType = _node.FaceImageType,
@@ -99,11 +99,12 @@ public class DialogueSaveAndLoad
             DialogueNodePorts = new List<DialogueNodePort>() // 创建空列表，避免引用问题
         };
 
-        // 正确复制端口信息
+        // 正确复制端口信息，包括 PortGuid
         foreach (DialogueNodePort originalPort in _node.dialogueNodePorts)
         {
             DialogueNodePort newPort = new DialogueNodePort
             {
+                PortGuid = originalPort.PortGuid,        // 修复：确保复制 PortGuid
                 PortId = originalPort.PortId,
                 TextFieldId = originalPort.TextFieldId,
                 InputGuid = originalPort.InputGuid,
@@ -130,7 +131,7 @@ public class DialogueSaveAndLoad
             // 重置连接信息
             nodePort.OutputGuid = string.Empty;
             nodePort.InputGuid = string.Empty;
-            
+    
             // 遍历所有边来查找与这个端口的连接
             foreach (Edge edge in edges)
             {
@@ -141,17 +142,15 @@ public class DialogueSaveAndLoad
                     // 确保输入节点存在并且是BaseNode类型
                     if (edge.input.node is BaseNode inputNode)
                     {
-                        nodePort.InputGuid = inputNode.NodeGuid;
+                        nodePort.OutputGuid = inputNode.NodeGuid; // 改为设置OutputGuid
                     }
                 }
             }
         }
+
         
         return dialogueNodeData;
     }
-
-
-
 
     private StartNodeData SaveNodeData(StartNode _node)
     {
@@ -188,7 +187,6 @@ public class DialogueSaveAndLoad
         return nodeData;
     }
     
-
     #endregion
     
     #region Load
@@ -246,7 +244,7 @@ public class DialogueSaveAndLoad
             tempNode.FaceImageType = node.DialogueFaceImageType;
 
             // 正确设置文本和音频数据
-            foreach (LanguageGeneric<string> languageGeneric in node.TextType)
+            foreach (LanguageGeneric<string> languageGeneric in node.TextLanguages)
             {
                 var targetText = tempNode.Texts.Find(language => language.LanguageType == languageGeneric.LanguageType);
                 if (targetText != null)
@@ -276,7 +274,6 @@ public class DialogueSaveAndLoad
             tempNode.LoadValueInToField();
             graphView.AddElement(tempNode);
         }
-
     }
 
     private void ConnectNodes(DialogueContainerSO _dialogueContainer)
@@ -331,7 +328,6 @@ public class DialogueSaveAndLoad
         }
     }
 
-
     // 通过PortId查找对话节点的端口
     private Port FindPortByPortId(DialogueNode dialogueNode, int index)
     {
@@ -359,8 +355,6 @@ public class DialogueSaveAndLoad
         
         return null;
     }
-
-
 
     // 安全地获取输出端口
     private Port GetOutputPortAt(BaseNode node, int index)
