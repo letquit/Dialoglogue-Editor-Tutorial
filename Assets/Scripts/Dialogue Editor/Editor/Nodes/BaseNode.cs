@@ -6,7 +6,7 @@ public class BaseNode : Node
 {
     protected DialogueGraphView graphView;
     protected DialogueEditorWindow editorWindow;
-    protected Vector2 defaultNodeSide = new Vector2(200, 250);
+    protected Vector2 defaultNodeSize = new Vector2(200, 250);
     
     protected string nodeGuid;
     public string NodeGuid { get => nodeGuid; set => nodeGuid = value; }

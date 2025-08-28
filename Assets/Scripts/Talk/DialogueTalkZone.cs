@@ -8,10 +8,21 @@ public class DialogueTalkZone : MonoBehaviour
     [SerializeField] private KeyCode talkKey = KeyCode.E;
     [SerializeField] private TextMeshProUGUI keyInputText;
 
+    private DialogueTalk dialogueTalk;
+    
     private void Awake()
     {
         speechBubble.SetActive(false);
         keyInputText.text = talkKey.ToString();
+        dialogueTalk = GetComponent<DialogueTalk>();
+    }
+    
+    private void Update()
+    {
+        if (Input.GetKeyDown(talkKey) && speechBubble.activeSelf)
+        {
+            dialogueTalk.StartDialogue();
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -19,15 +30,6 @@ public class DialogueTalkZone : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             speechBubble.SetActive(true);
-        }
-    }
-    
-    private void Update()
-    {
-        if (Input.GetKeyDown(talkKey) && speechBubble.activeSelf)
-        {
-            // TODO: Start Dialogue
-            Debug.Log("Start Dialogue");
         }
     }
 

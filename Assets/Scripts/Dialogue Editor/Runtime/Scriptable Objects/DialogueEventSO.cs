@@ -1,7 +1,6 @@
 using System;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Dialogue Event", menuName = "Dialogue/Dialogue Event")]
 [Serializable]
 public class DialogueEventSO : ScriptableObject
 {

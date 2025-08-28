@@ -61,11 +61,11 @@ public class DialogueNode : BaseNode
     {
         editorWindow = _editorWindow;
         graphView = _graphView;
-        
+    
         title = "Dialogue";
-        SetPosition(new Rect(_position, defaultNodeSide));
+        SetPosition(new Rect(_position, defaultNodeSize));
         nodeGuid = Guid.NewGuid().ToString();
-        
+    
         AddInputPort("Input", Port.Capacity.Multi);
 
         foreach (LanguageType language in (LanguageType[])Enum.GetValues(typeof(LanguageType)))
@@ -75,7 +75,7 @@ public class DialogueNode : BaseNode
                 LanguageType = language,
                 LanguageGenericType = ""
             });
-            
+        
             audioClips.Add(new LanguageGeneric<AudioClip>
             {
                 LanguageType = language,
@@ -202,6 +202,29 @@ public class DialogueNode : BaseNode
         faceImage_Field.SetValueWithoutNotify(faceImage);
         faceImageType_Field.SetValueWithoutNotify(FaceImageType);
         name_Field.SetValueWithoutNotify(Name);
+    
+        // 更新端口连接信息
+        UpdatePortConnections();
+    }
+
+    private void UpdatePortConnections()
+    {
+        // 确保所有端口的连接信息是最新的
+        foreach (DialogueNodePort nodePort in dialogueNodePorts)
+        {
+            // 查找与该端口连接的边
+            foreach (Edge edge in graphView.edges)
+            {
+                if (edge.output.node == this && edge.output.viewDataKey == nodePort.PortId)
+                {
+                    if (edge.input.node is BaseNode inputNode)
+                    {
+                        nodePort.InputGuid = inputNode.NodeGuid;
+                    }
+                    break;
+                }
+            }
+        }
     }
 
     public Port AddChoicePort(BaseNode _baseNode, DialogueNodePort _dialogueNodePort = null)
@@ -209,11 +232,28 @@ public class DialogueNode : BaseNode
         Port port = GetPortInstance(Direction.Output);
 
         int outputPortCount = _baseNode.outputContainer.Query("connector").ToList().Count();
-        string outputPortName = $"Choice {outputPortCount + 1}";
+        string outputPortName = "Continue";
 
         DialogueNodePort dialogueNodePort = new DialogueNodePort();
         
-        dialogueNodePort.PortId = Guid.NewGuid().ToString();
+        // 确保在任何条件下都设置PortId
+        if (_dialogueNodePort != null)
+        {
+            // 复用已存在的PortId
+            dialogueNodePort.PortId = _dialogueNodePort.PortId;
+            
+            // 检查是否已经存在相同ID的端口，避免重复添加
+            if (dialogueNodePorts.Any(p => p.PortId == _dialogueNodePort.PortId))
+            {
+                // 如果已存在，直接返回null或跳过
+                return null;
+            }
+        }
+        else
+        {
+            // 创建新的PortId
+            dialogueNodePort.PortId = Guid.NewGuid().ToString();
+        }
 
         foreach (LanguageType language in (LanguageType[])Enum.GetValues(typeof(LanguageType)))
         {
@@ -228,7 +268,6 @@ public class DialogueNode : BaseNode
         {
             dialogueNodePort.InputGuid = _dialogueNodePort.InputGuid;
             dialogueNodePort.OutputGuid = _dialogueNodePort.OutputGuid;
-            dialogueNodePort.PortId = _dialogueNodePort.PortId; // 复用PortId
 
             foreach (LanguageGeneric<string> languageGeneric in _dialogueNodePort.TextLanguages)
             {
@@ -262,6 +301,9 @@ public class DialogueNode : BaseNode
         
         dialogueNodePorts.Add(dialogueNodePort);
         
+        // 设置端口的viewDataKey，这很重要，用于保存和加载时识别端口
+        port.viewDataKey = dialogueNodePort.PortId;
+        
         _baseNode.outputContainer.Add(port);
         
         //Refresh
@@ -270,6 +312,8 @@ public class DialogueNode : BaseNode
         
         return port;
     }
+
+
 
 
     private void DeletePort(BaseNode _node, Port _port)

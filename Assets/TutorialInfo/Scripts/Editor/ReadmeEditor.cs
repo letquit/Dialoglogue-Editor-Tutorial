@@ -36,7 +36,7 @@ public class ReadmeEditor : Editor
             }
             else
             {
-                Debug.Log($"Could not find the Readme folder at {s_ReadmeSourceDirectory}");
+                // 移除了 Debug.Log 语句
             }
 
             var readmeAsset = SelectReadme();
@@ -87,7 +87,7 @@ public class ReadmeEditor : Editor
         }
         else
         {
-            Debug.Log("Couldn't find a readme");
+            // 移除了 Debug.Log 语句
             return null;
         }
     }

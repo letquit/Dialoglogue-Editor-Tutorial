@@ -96,28 +96,62 @@ public class DialogueSaveAndLoad
             AudioClips = _node.AudioClips,
             DialogueFaceImageType = _node.FaceImageType,
             Sprite = _node.FaceImage,
-            DialogueNodePorts = _node.dialogueNodePorts
+            DialogueNodePorts = new List<DialogueNodePort>() // 创建空列表，避免引用问题
         };
 
-        // 修复：确保所有端口的连接信息都被正确保存
+        // 正确复制端口信息
+        foreach (DialogueNodePort originalPort in _node.dialogueNodePorts)
+        {
+            DialogueNodePort newPort = new DialogueNodePort
+            {
+                PortId = originalPort.PortId,
+                TextFieldId = originalPort.TextFieldId,
+                InputGuid = originalPort.InputGuid,
+                OutputGuid = originalPort.OutputGuid,
+                TextLanguages = new List<LanguageGeneric<string>>()
+            };
+            
+            // 复制文本语言信息
+            foreach (LanguageGeneric<string> textLanguage in originalPort.TextLanguages)
+            {
+                newPort.TextLanguages.Add(new LanguageGeneric<string>
+                {
+                    LanguageType = textLanguage.LanguageType,
+                    LanguageGenericType = textLanguage.LanguageGenericType
+                });
+            }
+            
+            dialogueNodeData.DialogueNodePorts.Add(newPort);
+        }
+
+        // 确保所有端口的连接信息都被正确更新
         foreach (DialogueNodePort nodePort in dialogueNodeData.DialogueNodePorts)
         {
+            // 重置连接信息
             nodePort.OutputGuid = string.Empty;
             nodePort.InputGuid = string.Empty;
             
             // 遍历所有边来查找与这个端口的连接
             foreach (Edge edge in edges)
             {
-                if (edge.output.viewDataKey == nodePort.PortId)
+                // 使用PortId来匹配端口，而不是索引
+                if (edge.output.node != null && edge.output.node is DialogueNode outputNode && 
+                    edge.output.node == _node && edge.output.viewDataKey == nodePort.PortId)
                 {
-                    nodePort.OutputGuid = (edge.output.node as BaseNode).NodeGuid;
-                    nodePort.InputGuid = (edge.input.node as BaseNode).NodeGuid;
+                    // 确保输入节点存在并且是BaseNode类型
+                    if (edge.input.node is BaseNode inputNode)
+                    {
+                        nodePort.InputGuid = inputNode.NodeGuid;
+                    }
                 }
             }
         }
         
         return dialogueNodeData;
     }
+
+
+
 
     private StartNodeData SaveNodeData(StartNode _node)
     {
@@ -208,12 +242,32 @@ public class DialogueSaveAndLoad
             DialogueNode tempNode = graphView.CreateDialogueNode(node.Position);
             tempNode.NodeGuid = node.NodeGuid;
             tempNode.Name = node.Name;
-            tempNode.Texts = node.TextType;
             tempNode.FaceImage = node.Sprite;
             tempNode.FaceImageType = node.DialogueFaceImageType;
-            tempNode.AudioClips = node.AudioClips;
+
+            // 正确设置文本和音频数据
+            foreach (LanguageGeneric<string> languageGeneric in node.TextType)
+            {
+                var targetText = tempNode.Texts.Find(language => language.LanguageType == languageGeneric.LanguageType);
+                if (targetText != null)
+                {
+                    targetText.LanguageGenericType = languageGeneric.LanguageGenericType;
+                }
+            }
             
-            // 修复：确保所有端口都被正确添加
+            foreach (LanguageGeneric<AudioClip> languageGeneric in node.AudioClips)
+            {
+                var targetAudio = tempNode.AudioClips.Find(language => language.LanguageType == languageGeneric.LanguageType);
+                if (targetAudio != null)
+                {
+                    targetAudio.LanguageGenericType = languageGeneric.LanguageGenericType;
+                }
+            }
+            
+            // 关键修改：先清空现有的端口，避免重复创建
+            tempNode.dialogueNodePorts.Clear();
+            
+            // 然后添加端口
             foreach (DialogueNodePort nodePort in node.DialogueNodePorts)
             {
                 tempNode.AddChoicePort(tempNode, nodePort);
@@ -222,11 +276,12 @@ public class DialogueSaveAndLoad
             tempNode.LoadValueInToField();
             graphView.AddElement(tempNode);
         }
+
     }
 
     private void ConnectNodes(DialogueContainerSO _dialogueContainer)
     {
-        // 连接所有节点（包括对话节点）
+        // 先连接所有节点
         for (int i = 0; i < nodes.Count; i++)
         {
             List<NodeLinkData> connections = _dialogueContainer.NodeLinkDatas
@@ -264,18 +319,48 @@ public class DialogueSaveAndLoad
                 }
             }
         }
+        
+        // 特殊处理：确保对话节点的端口连接信息正确保存
+        foreach (BaseNode node in nodes)
+        {
+            if (node is DialogueNode dialogueNode)
+            {
+                // 重新加载对话节点的端口连接信息
+                dialogueNode.LoadValueInToField();
+            }
+        }
     }
 
-    // 通过索引查找对话节点的端口
+
+    // 通过PortId查找对话节点的端口
     private Port FindPortByPortId(DialogueNode dialogueNode, int index)
     {
+        // 首先尝试通过索引和PortId匹配查找
+        if (index < dialogueNode.dialogueNodePorts.Count)
+        {
+            string portId = dialogueNode.dialogueNodePorts[index].PortId;
+            // 在节点的输出容器中查找匹配PortId的端口
+            foreach (var child in dialogueNode.outputContainer.Children())
+            {
+                Port port = child.Q<Port>();
+                if (port != null && port.viewDataKey == portId)
+                {
+                    return port;
+                }
+            }
+        }
+        
+        // 如果通过索引查找失败，尝试遍历所有端口
         if (index < dialogueNode.outputContainer.childCount)
         {
             VisualElement portElement = dialogueNode.outputContainer[index];
             return portElement.Q<Port>();
         }
+        
         return null;
     }
+
+
 
     // 安全地获取输出端口
     private Port GetOutputPortAt(BaseNode node, int index)
