@@ -23,10 +23,6 @@ MonoBehaviour:
     TargetNodeGuid: 3e8560d0-a356-48f8-8905-460a0f639fb4
   - BaseNodeGuid: 3e8560d0-a356-48f8-8905-460a0f639fb4
     TargetNodeGuid: ad7c2249-f94e-4b82-bb14-d162221e6f84
-  - BaseNodeGuid: ad7c2249-f94e-4b82-bb14-d162221e6f84
-    TargetNodeGuid: 29db7eae-38fb-47a0-986d-5ef7d0070ba6
-  - BaseNodeGuid: ad7c2249-f94e-4b82-bb14-d162221e6f84
-    TargetNodeGuid: 8f086cf9-3834-438f-b6f8-466b0fc56ec3
   - BaseNodeGuid: 29db7eae-38fb-47a0-986d-5ef7d0070ba6
     TargetNodeGuid: ea8b4c41-f99d-439c-aaca-ae208044adaf
   - BaseNodeGuid: ea8b4c41-f99d-439c-aaca-ae208044adaf
@@ -47,6 +43,10 @@ MonoBehaviour:
     TargetNodeGuid: cce8e68a-9dfc-4b79-bbaa-c9dc94afbc57
   - BaseNodeGuid: c7174e3e-bfa8-4dc1-83c8-deb69cff5d49
     TargetNodeGuid: efdc0c43-19d0-4e4d-8f8e-6a362789f225
+  - BaseNodeGuid: ad7c2249-f94e-4b82-bb14-d162221e6f84
+    TargetNodeGuid: 29db7eae-38fb-47a0-986d-5ef7d0070ba6
+  - BaseNodeGuid: ad7c2249-f94e-4b82-bb14-d162221e6f84
+    TargetNodeGuid: 8f086cf9-3834-438f-b6f8-466b0fc56ec3
   DialogueNodeDatas:
   - NodeGuid: ecae499e-312c-4999-967f-1ec06d4218f2
     Position: {x: 854, y: 141}
@@ -55,7 +55,7 @@ MonoBehaviour:
       InputGuid: 
       OutputGuid: 3e8560d0-a356-48f8-8905-460a0f639fb4
       PortId: 440aadff-e278-4a9e-8cb2-1dbb075395e6
-      TextFieldId: 07c492a3-979d-4383-9f48-29593c0254e7
+      TextFieldId: e8f2c51c-e3e1-4c6a-b8f2-fee5da75f3be
       TextLanguages:
       - LanguageType: 0
         LanguageGenericType: Continue
@@ -89,7 +89,7 @@ MonoBehaviour:
       InputGuid: 
       OutputGuid: ad7c2249-f94e-4b82-bb14-d162221e6f84
       PortId: 57687f20-4ae4-4e77-bf31-281b22baf856
-      TextFieldId: a84e5f07-cd82-4cc3-84b3-a6ce802daa2d
+      TextFieldId: a0f6ede7-d7c7-4fce-973b-6cdfa511241c
       TextLanguages:
       - LanguageType: 0
         LanguageGenericType: Continue
@@ -114,50 +114,6 @@ MonoBehaviour:
       LanguageGenericType: "\u6211\u624D\u662F\u73A9\u5BB6\uFF01"
     - LanguageType: 2
       LanguageGenericType: "\u79C1\u306F\u30D7\u30EC\u30A4\u30E4\u30FC\u306E\u306F\u305A\u306A\u3093\u3060\u3051\u3069\uFF01"
-  - NodeGuid: ad7c2249-f94e-4b82-bb14-d162221e6f84
-    Position: {x: 1371, y: 141}
-    DialogueNodePorts:
-    - PortGuid: a9c660f4-2cb6-41fb-a16a-689a7695820f
-      InputGuid: 
-      OutputGuid: 29db7eae-38fb-47a0-986d-5ef7d0070ba6
-      PortId: f53ba102-2c08-4843-9a74-cba354a1b230
-      TextFieldId: f76be7af-dd5f-4a77-b9ef-d660a8b80752
-      TextLanguages:
-      - LanguageType: 0
-        LanguageGenericType: Yes!
-      - LanguageType: 1
-        LanguageGenericType: "\u6709\uFF01"
-      - LanguageType: 2
-        LanguageGenericType: "\u3082\u3061\u308D\u3093\uFF01"
-    - PortGuid: a4db2f92-36dc-4ff1-bbab-c7b12d9580a7
-      InputGuid: 
-      OutputGuid: 8f086cf9-3834-438f-b6f8-466b0fc56ec3
-      PortId: d9777296-2d22-468a-9f6d-e9c06d17f32e
-      TextFieldId: d5598daa-0052-4950-a268-1ca63e0f061e
-      TextLanguages:
-      - LanguageType: 0
-        LanguageGenericType: No...
-      - LanguageType: 1
-        LanguageGenericType: "\u6CA1\u610F\u601D..."
-      - LanguageType: 2
-        LanguageGenericType: "\u5168\u7136\u697D\u3057\u304F\u306A\u3044\u3088..."
-    Sprite: {fileID: 21300000, guid: b41ca9d947370b944a8cb4fa861377e5, type: 3}
-    DialogueFaceImageType: 1
-    AudioClips:
-    - LanguageType: 0
-      LanguageGenericType: {fileID: 0}
-    - LanguageType: 1
-      LanguageGenericType: {fileID: 0}
-    - LanguageType: 2
-      LanguageGenericType: {fileID: 0}
-    Name: Female
-    TextLanguages:
-    - LanguageType: 0
-      LanguageGenericType: Is it any fun to be the player?
-    - LanguageType: 1
-      LanguageGenericType: "\u5F53\u73A9\u5BB6\u6709\u610F\u601D\u5417\uFF1F"
-    - LanguageType: 2
-      LanguageGenericType: "\u30D7\u30EC\u30A4\u30E4\u30FC\u3063\u3066\u697D\u3057\u3044\u306E\uFF1F"
   - NodeGuid: 29db7eae-38fb-47a0-986d-5ef7d0070ba6
     Position: {x: 1675, y: -13}
     DialogueNodePorts:
@@ -165,7 +121,7 @@ MonoBehaviour:
       InputGuid: 
       OutputGuid: ea8b4c41-f99d-439c-aaca-ae208044adaf
       PortId: d4fe9e9b-8eb4-4b97-9c16-5fa47bdce2ac
-      TextFieldId: 43711aee-cfb9-4f9b-ad6b-3784f9c91c3f
+      TextFieldId: 2610e159-75f2-4973-b23c-5e9e6c4a192f
       TextLanguages:
       - LanguageType: 0
         LanguageGenericType: Continue
@@ -197,7 +153,7 @@ MonoBehaviour:
       InputGuid: 
       OutputGuid: cf1599b0-628b-4179-a90a-df9345750970
       PortId: fff5792b-a16d-4ce5-9130-fc09d6b805d5
-      TextFieldId: 08d82e02-a9f1-46e7-b9d8-17f9285c74e3
+      TextFieldId: e3b5c9e1-51e0-4c7e-a458-301f088eac1d
       TextLanguages:
       - LanguageType: 0
         LanguageGenericType: End
@@ -229,7 +185,7 @@ MonoBehaviour:
       InputGuid: 
       OutputGuid: cf1599b0-628b-4179-a90a-df9345750970
       PortId: aa2a7335-25f5-4326-a264-4778bcc8167f
-      TextFieldId: 908f8262-262b-4b35-9f30-6f869b78689a
+      TextFieldId: 05b18793-a055-449d-bbb5-7a2286600584
       TextLanguages:
       - LanguageType: 0
         LanguageGenericType: End
@@ -261,7 +217,7 @@ MonoBehaviour:
       InputGuid: 
       OutputGuid: fa850dc7-a2aa-4a59-bcb4-ad5296faa57e
       PortId: 10246b32-01ec-4e64-88d0-fa398bdd9af1
-      TextFieldId: 4cf75528-8412-43b0-8be3-cb567ad0f6da
+      TextFieldId: 71ff8929-e96c-42e4-b3f4-b282504ea24e
       TextLanguages:
       - LanguageType: 0
         LanguageGenericType: Continue
@@ -293,7 +249,7 @@ MonoBehaviour:
       InputGuid: 
       OutputGuid: ecae499e-312c-4999-967f-1ec06d4218f2
       PortId: d176b85f-aea4-4b20-9926-2e5b01d28241
-      TextFieldId: 7660327d-edcf-4402-bd6c-29ff8aaa1db7
+      TextFieldId: 3bc6f8d9-77fc-476f-887c-f708789b4313
       TextLanguages:
       - LanguageType: 0
         LanguageGenericType: Who are you?
@@ -305,7 +261,7 @@ MonoBehaviour:
       InputGuid: 
       OutputGuid: c7174e3e-bfa8-4dc1-83c8-deb69cff5d49
       PortId: 90445389-a62c-4ff3-9223-f2477bb71696
-      TextFieldId: d91d4b4b-14a8-4315-ab8b-a6fff4a75bc3
+      TextFieldId: 4458d0f1-cb29-4fdf-9215-1bf70a0d4d74
       TextLanguages:
       - LanguageType: 0
         LanguageGenericType: I want to color stuff
@@ -317,7 +273,7 @@ MonoBehaviour:
       InputGuid: 
       OutputGuid: 5d0239b3-9f6f-4679-894c-504ae54e26cf
       PortId: e50c1298-a0ea-4747-a7fc-9167761b898f
-      TextFieldId: 2399a364-0966-4387-8be0-65ec2754c6de
+      TextFieldId: b79502fe-f2d8-4ab6-8152-c3843bfe678a
       TextLanguages:
       - LanguageType: 0
         LanguageGenericType: Bye
@@ -342,14 +298,58 @@ MonoBehaviour:
       LanguageGenericType: "\u55EF\uFF1F\u600E\u4E48\u4E86\uFF1F"
     - LanguageType: 2
       LanguageGenericType: "\u3093\uFF1F\u3069\u3046\u3057\u305F\u306E\uFF1F"
+  - NodeGuid: ad7c2249-f94e-4b82-bb14-d162221e6f84
+    Position: {x: 1362, y: 141}
+    DialogueNodePorts:
+    - PortGuid: a9c660f4-2cb6-41fb-a16a-689a7695820f
+      InputGuid: 
+      OutputGuid: 29db7eae-38fb-47a0-986d-5ef7d0070ba6
+      PortId: f53ba102-2c08-4843-9a74-cba354a1b230
+      TextFieldId: 2f5fa025-e99e-4999-823b-1c0297226389
+      TextLanguages:
+      - LanguageType: 0
+        LanguageGenericType: Yes!
+      - LanguageType: 1
+        LanguageGenericType: "\u6709\uFF01"
+      - LanguageType: 2
+        LanguageGenericType: "\u3082\u3061\u308D\u3093\uFF01"
+    - PortGuid: a4db2f92-36dc-4ff1-bbab-c7b12d9580a7
+      InputGuid: 
+      OutputGuid: 8f086cf9-3834-438f-b6f8-466b0fc56ec3
+      PortId: d9777296-2d22-468a-9f6d-e9c06d17f32e
+      TextFieldId: cfc5cb1f-d51f-4660-a582-727153fa2541
+      TextLanguages:
+      - LanguageType: 0
+        LanguageGenericType: No...
+      - LanguageType: 1
+        LanguageGenericType: "\u6CA1\u610F\u601D..."
+      - LanguageType: 2
+        LanguageGenericType: "\u5168\u7136\u697D\u3057\u304F\u306A\u3044\u3088..."
+    Sprite: {fileID: 21300000, guid: b41ca9d947370b944a8cb4fa861377e5, type: 3}
+    DialogueFaceImageType: 1
+    AudioClips:
+    - LanguageType: 0
+      LanguageGenericType: {fileID: 0}
+    - LanguageType: 1
+      LanguageGenericType: {fileID: 0}
+    - LanguageType: 2
+      LanguageGenericType: {fileID: 0}
+    Name: Female
+    TextLanguages:
+    - LanguageType: 0
+      LanguageGenericType: Is it any fun to be the player?
+    - LanguageType: 1
+      LanguageGenericType: "\u5F53\u73A9\u5BB6\u6709\u610F\u601D\u5417\uFF1F"
+    - LanguageType: 2
+      LanguageGenericType: "\u30D7\u30EC\u30A4\u30E4\u30FC\u3063\u3066\u697D\u3057\u3044\u306E\uFF1F"
   - NodeGuid: c7174e3e-bfa8-4dc1-83c8-deb69cff5d49
-    Position: {x: 889, y: 459}
+    Position: {x: 854, y: 480}
     DialogueNodePorts:
     - PortGuid: 29700375-a667-4c2a-8639-f4256a84cc79
       InputGuid: 
       OutputGuid: 798102fd-4bb6-444d-8de8-3e1c8eb7abfc
       PortId: fd11bb69-5214-41ab-abed-88035f267962
-      TextFieldId: 85e358fc-3970-4696-bc23-e4e85d1ac5d7
+      TextFieldId: 13ac5326-a215-494d-9af7-30f4dc0e6f76
       TextLanguages:
       - LanguageType: 0
         LanguageGenericType: Color Player
@@ -361,7 +361,7 @@ MonoBehaviour:
       InputGuid: 
       OutputGuid: cce8e68a-9dfc-4b79-bbaa-c9dc94afbc57
       PortId: ea43c7bb-bf35-46df-9dd1-a3257ff7e880
-      TextFieldId: ac87c69a-b44f-4501-94a1-be78d377863b
+      TextFieldId: 3b8219ff-cca2-4434-b3b1-7b2c00269a69
       TextLanguages:
       - LanguageType: 0
         LanguageGenericType: Color NPC
@@ -373,7 +373,7 @@ MonoBehaviour:
       InputGuid: 
       OutputGuid: efdc0c43-19d0-4e4d-8f8e-6a362789f225
       PortId: 413b191d-57af-493b-bb21-2ac98b21823f
-      TextFieldId: f98dd6d2-720e-434a-ab90-7b251f5719a4
+      TextFieldId: b87843c7-b902-485a-97dd-1be30a672858
       TextLanguages:
       - LanguageType: 0
         LanguageGenericType: Go back
@@ -395,13 +395,10 @@ MonoBehaviour:
     - LanguageType: 0
       LanguageGenericType: What do you want to color?
     - LanguageType: 1
-      LanguageGenericType: "\u4F60\u60F3\u6D82\u4EC0\u4E48\u989C\u8272\u554A\uFF1F"
+      LanguageGenericType: "\u4F60\u60F3\u7ED9\u8C01\u6D82\u8272\u554A\uFF1F"
     - LanguageType: 2
       LanguageGenericType: "\u4F55\u306B\u8272\u3092\u5857\u308A\u305F\u3044\u306E?"
   EndNodeDatas:
-  - NodeGuid: 646938be-391a-4526-8cab-fe1243c20f5c
-    Position: {x: 1493, y: 459}
-    EndNodeType: 1
   - NodeGuid: d0efc14d-3b5e-46ca-954b-7e7607611bf1
     Position: {x: 1496, y: 610}
     EndNodeType: 1
@@ -412,8 +409,11 @@ MonoBehaviour:
     Position: {x: 2256, y: 209}
     EndNodeType: 3
   - NodeGuid: 5d0239b3-9f6f-4679-894c-504ae54e26cf
-    Position: {x: 912, y: 755}
+    Position: {x: 904, y: 870}
     EndNodeType: 0
+  - NodeGuid: 646938be-391a-4526-8cab-fe1243c20f5c
+    Position: {x: 1496, y: 508}
+    EndNodeType: 1
   StartNodeDatas:
   - NodeGuid: b90cbefa-ee1a-4d3d-befd-99c4284c6251
     Position: {x: 353, y: 459}
@@ -422,5 +422,5 @@ MonoBehaviour:
     Position: {x: 1222, y: 610}
     DialogueEventSO: {fileID: 11400000, guid: 8c164630cdf6cd941ac6db4a909755af, type: 2}
   - NodeGuid: 798102fd-4bb6-444d-8de8-3e1c8eb7abfc
-    Position: {x: 1222, y: 474}
+    Position: {x: 1213, y: 507}
     DialogueEventSO: {fileID: 11400000, guid: b85dd472ecd41db49864e305f6179574, type: 2}
